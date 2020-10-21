@@ -5,3 +5,17 @@ This repository is intended as a collection of tools for generation of computati
 * By import into [PorePy](https://github.com/pmgbergen/porepy), for use in simulations in fractured porous media.
 
 While the latter is the main use case for this repository, the gmsh files can also be imported into other software.
+
+
+## How to use
+The networks can be imported to PorePy by the commands
+
+import porepy_mesh_factory as pmf
+pmf.main.generate(case=case_name)
+
+where case_name is specified below. Additional arguments may be needed to import specific cases; see the files doing specific imports for more.
+
+## Available networks
+
+* Case 3 from 'Benchmarks for single-phase flow in fractured porous media' by Bernd Flemisch et al, Advances in Water Resources, 2018. case_name = 'flow_benchmark_2d_case_3'
+* Case 2 from 'Verification benchmarks for single-phase flow in three-dimensional fractured porous media' by Bernd Flemisch et al, Advances in Water Resources, 2020. case_name = 'flow_benchmark_3d_case_2'
