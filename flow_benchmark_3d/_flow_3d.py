@@ -64,4 +64,19 @@ def case3(refinement: Literal[0, 1, 2, 3]) -> pp.GridBucket:
     return pp.fracture_importer.dfm_from_gmsh(str(file_name), 3)
 
 
+def case4() -> pp.GridBucket:
+    """ Case 4 in 3d flow benchmark.
 
+    For now, mesh size cannot be adjusted, only the grid as specified in the
+    benchmark (modulu changes to gmsh) is available
+
+    Returns:
+        pp.GridBucket: Mixed-dimensional grid of the domain
+
+    """
+    abs_path = Path(__file__)
+    directory = abs_path.parent / Path("case4")
+
+    file_name = directory / Path("mesh242k.geo")
+
+    return pp.fracture_importer.dfm_from_gmsh(str(file_name), 3)

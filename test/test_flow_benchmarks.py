@@ -40,3 +40,10 @@ def test_case3_3d(refinement):
     assert len(gb.grids_of_dimension(1)) == 7
 
 
+def test_case4_3d():
+    case = "flow_benchmark_3d_case_4"
+    gb = pmf.main.generate(case)
+    assert len(gb.grids_of_dimension(3)) == 1
+    assert len(gb.grids_of_dimension(2)) == 52
+    assert len(gb.grids_of_dimension(1)) == 106
+
