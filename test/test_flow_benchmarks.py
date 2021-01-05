@@ -18,9 +18,25 @@ def test_case3_2d(mesh_args):
         assert len(gb.grids_of_dimension(1)) == 10
         assert len(gb.grids_of_dimension(0)) == 6
 
-
 @pytest.mark.parametrize("refinement", [0, 1, 2])
 def test_case2_3d(refinement):
     case = "flow_benchmark_3d_case_2"
 
     gb = pmf.main.generate(case, refinement=refinement)
+
+    assert len(gb.grids_of_dimension(3)) == 1
+    assert len(gb.grids_of_dimension(2)) == 9
+    assert len(gb.grids_of_dimension(1)) == 69
+    assert len(gb.grids_of_dimension(0)) == 27
+
+
+@pytest.mark.parametrize("refinement", [0, 1, 2, 3])
+def test_case3_3d(refinement):
+    case = "flow_benchmark_3d_case_3"
+
+    gb = pmf.main.generate(case, refinement=refinement)
+    assert len(gb.grids_of_dimension(3)) == 1
+    assert len(gb.grids_of_dimension(2)) == 8
+    assert len(gb.grids_of_dimension(1)) == 7
+
+

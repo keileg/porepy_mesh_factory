@@ -53,7 +53,7 @@ def case3(refinement: Literal[0, 1, 2, 3]) -> pp.GridBucket:
     if refinement == 0:
         file_name = directory / Path("mesh30k.geo")
     elif refinement == 1:
-        file_name = directory / Path("mesh140.geo")
+        file_name = directory / Path("mesh140k.geo")
     elif refinement == 2:
         file_name = directory / Path("mesh350k.geo")
     elif refinement == 3:
