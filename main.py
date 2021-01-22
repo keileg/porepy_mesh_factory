@@ -25,6 +25,8 @@ def generate(case: str, **kwargs) -> pp.GridBucket:
         return _flow_3d.case4(**kwargs)
     elif case == "flow_benchmark_2d_case_3":
         return _flow_2d.case3(**kwargs)
+    elif case == "flow_benchmark_2d_case_4":
+        return _flow_2d.case4(**kwargs)
 
     else:
         raise ValueError(f"Unknown case {case}")
