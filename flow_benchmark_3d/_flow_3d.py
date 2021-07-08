@@ -1,14 +1,43 @@
 from pathlib import Path
 import sys
 if sys.version[:3] < '3.8':
-    from typing_extensions import Literal
+    from typing_extensions import Literal, Union, Optional
 else:
-    from typing import Literal
+    from typing import Literal, Union, Optional
 
 import porepy as pp
 
+def case1(refinement: Optional[Literal[0, 1, 2]] = None, only_network: Optional[bool] = False) -> Union[pp.GridBucket, pp.FractureNetwork3d]:
+    """ Case 2 in 3d flow benchmark.
 
-def case2(refinement: Literal[0, 1, 2]) -> pp.GridBucket:
+    Parameters:
+        refinement (int): Refinement level. Should be 0, 1 or 2,
+            corresponding to grids with roughly 500, 4k and 32k
+            3d cells, respectively.
+
+    Returns:
+        pp.GridBucket: Mixed-dimensional grid of the domain.
+
+    """
+    abs_path = Path(__file__)
+    directory = abs_path.parent / Path("case1")
+
+    if only_network:
+        return pp.fracture_importer.network_3d_from_csv(str(directory / Path("benchmark_3d_case_1.csv")))
+
+    if refinement == 0:
+        file_name = directory / Path("mesh1k.geo")
+    elif refinement == 1:
+        file_name = directory / Path("mesh10k.geo")
+    elif refinement == 2:
+        file_name = directory / Path("mesh100k.geo")
+    else:
+        raise ValueError(f"Expected refinement level 0, 1, or 2, got {refinement}")
+
+    return pp.fracture_importer.dfm_from_gmsh(str(file_name), 3)
+
+
+def case2(refinement: Optional[Literal[0, 1, 2]] = None, only_network: Optional[bool] = False) -> Union[pp.GridBucket, pp.FractureNetwork3d]:
     """ Case 2 in 3d flow benchmark.
 
     Parameters:
@@ -22,6 +51,10 @@ def case2(refinement: Literal[0, 1, 2]) -> pp.GridBucket:
     """
     abs_path = Path(__file__)
     directory = abs_path.parent / Path("case2")
+
+    if only_network:
+        return pp.fracture_importer.network_3d_from_csv(str(directory / Path("benchmark_3d_case_2.csv")))
+
     if refinement == 0:
         file_name = directory / Path("mesh500.geo")
     elif refinement == 1:
@@ -34,7 +67,7 @@ def case2(refinement: Literal[0, 1, 2]) -> pp.GridBucket:
     return pp.fracture_importer.dfm_from_gmsh(str(file_name), 3)
 
 
-def case3(refinement: Literal[0, 1, 2, 3]) -> pp.GridBucket:
+def case3(refinement: Optional[Literal[0, 1, 2, 3]] = None, only_network: Optional[bool] = False) -> Union[pp.GridBucket, pp.FractureNetwork3d]:
     """ Case 3 in 3d flow benchmark.
 
     Parameters:
@@ -50,6 +83,10 @@ def case3(refinement: Literal[0, 1, 2, 3]) -> pp.GridBucket:
     """
     abs_path = Path(__file__)
     directory = abs_path.parent / Path("case3")
+
+    if only_network:
+        return pp.fracture_importer.network_3d_from_csv(str(directory / Path("benchmark_3d_case_3.csv")))
+
     if refinement == 0:
         file_name = directory / Path("mesh30k.geo")
     elif refinement == 1:
@@ -64,7 +101,7 @@ def case3(refinement: Literal[0, 1, 2, 3]) -> pp.GridBucket:
     return pp.fracture_importer.dfm_from_gmsh(str(file_name), 3)
 
 
-def case4() -> pp.GridBucket:
+def case4(only_network: Optional[bool] = False) -> Union[pp.GridBucket, pp.FractureNetwork3d]:
     """ Case 4 in 3d flow benchmark.
 
     For now, mesh size cannot be adjusted, only the grid as specified in the
@@ -76,6 +113,9 @@ def case4() -> pp.GridBucket:
     """
     abs_path = Path(__file__)
     directory = abs_path.parent / Path("case4")
+
+    if only_network:
+        return pp.fracture_importer.network_3d_from_csv(str(directory / Path("benchmark_3d_case_4.csv")), has_domain=False)
 
     file_name = directory / Path("mesh242k.geo")
 
