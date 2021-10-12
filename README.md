@@ -18,11 +18,11 @@ pmf.main.generate(case=case_name)
 where case_name is specified below. Additional arguments may be needed to import specific cases; see the files doing specific imports for more.
 
 ## Available networks
-* Case 3 from 'Benchmarks for single-phase flow in fractured porous media' by Bernd Flemisch et al, Advances in Water Resources, 2018. case_name = 'flow_benchmark_2d_case_3'
-* Case 4 from 'Benchmarks for single-phase flow in fractured porous media' by Bernd Flemisch et al, Advances in Water Resources, 2018. case_name = 'flow_benchmark_2d_case_4'
-* Case 2 from 'Verification benchmarks for single-phase flow in three-dimensional fractured porous media' by Bernd Flemisch et al, Advances in Water Resources, 2020. case_name = 'flow_benchmark_3d_case_2'
-* Case 3 from 'Verification benchmarks for single-phase flow in three-dimensional fractured porous media' by Bernd Flemisch et al, Advances in Water Resources, 2020. case_name = 'flow_benchmark_3d_case_3'
-* Case 4 from 'Verification benchmarks for single-phase flow in three-dimensional fractured porous media' by Bernd Flemisch et al, Advances in Water Resources, 2020. case_name = 'flow_benchmark_3d_case_4'
+* Case 3 from 'Benchmarks for single-phase flow in fractured porous media' by Flemisch et al, Advances in Water Resources, 2018. case_name = 'flow_benchmark_2d_case_3'
+* Case 4 from 'Benchmarks for single-phase flow in fractured porous media' by Flemisch et al, Advances in Water Resources, 2018. case_name = 'flow_benchmark_2d_case_4'
+* Case 2 from 'Verification benchmarks for single-phase flow in three-dimensional fractured porous media' by Berre et al, Advances in Water Resources, 2021. case_name = 'flow_benchmark_3d_case_2'
+* Case 3 from 'Verification benchmarks for single-phase flow in three-dimensional fractured porous media' by Berre et al, Advances in Water Resources, 2021. case_name = 'flow_benchmark_3d_case_3'
+* Case 4 from 'Verification benchmarks for single-phase flow in three-dimensional fractured porous media' by Berre et al, Advances in Water Resources, 2021. case_name = 'flow_benchmark_3d_case_4'
 
 
 ## Missing a network?
