@@ -5,7 +5,9 @@ from typing import Optional, Dict, Union
 import porepy as pp
 
 
-def case3(mesh_args: Optional[Dict[str, float]] = None, only_network: Optional[bool] = False) -> Union[pp.GridBucket, pp.FractureNetwork2d]:
+def case3(
+    mesh_args: Optional[Dict[str, float]] = None, only_network: Optional[bool] = False
+) -> Union[pp.GridBucket, pp.FractureNetwork2d]:
     """Case 3 in 2d flow benchmark.
 
     Parameters:
@@ -28,7 +30,9 @@ def case3(mesh_args: Optional[Dict[str, float]] = None, only_network: Optional[b
         return _from_file(directory, "benchmark_2d_case_3.csv", mesh_args)
 
 
-def case4(mesh_args: Optional[Dict[str, float]] = None, only_network: Optional[bool] = False) -> Union[pp.GridBucket, pp.FractureNetwork2d]:
+def case4(
+    mesh_args: Optional[Dict[str, float]] = None, only_network: Optional[bool] = False
+) -> Union[pp.GridBucket, pp.FractureNetwork2d]:
     """Case 4 in 2d flow benchmark.
 
     Parameters:
