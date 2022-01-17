@@ -4,6 +4,30 @@ from pathlib import Path
 from typing import Optional, Dict, Union
 import porepy as pp
 
+def case2(
+    mesh_args: Optional[Dict[str, float]] = None, only_network: Optional[bool] = False
+) -> Union[pp.GridBucket, pp.FractureNetwork2d]:
+    """Case 2 in 2d flow benchmark.
+
+    Parameters:
+        mesh_args (dict): Mesh arguments to be passed to PorePy.
+
+    Returns:
+        pp.GridBucket: Mixed-dimensional grid of the domain.
+
+    """
+    abs_path = Path(__file__)
+    directory = abs_path.parent / Path("case2")
+
+    if only_network:
+        return _from_file(directory, "benchmark_2d_case_2.csv", only_network=True)
+    elif mesh_args is None:
+        raise NotImplemented
+        #return _from_file(directory, "MESH_FILE.geo")
+    else:
+        return _from_file(directory, "benchmark_2d_case_2.csv", mesh_args)
+
+
 
 def case3(
     mesh_args: Optional[Dict[str, float]] = None, only_network: Optional[bool] = False
