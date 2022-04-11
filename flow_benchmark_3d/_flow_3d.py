@@ -1,7 +1,7 @@
 from pathlib import Path
 import sys
 
-if sys.version[:3] < "3.8":
+if sys.version_info.minor < 8:
     from typing_extensions import Literal, Union, Optional
 else:
     from typing import Literal, Union, Optional
