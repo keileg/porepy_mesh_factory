@@ -6,14 +6,14 @@ import porepy as pp
 
 def case2(
     mesh_args: Optional[Dict[str, float]] = None, only_network: Optional[bool] = False
-) -> Union[pp.GridBucket, pp.FractureNetwork2d]:
+) -> Union[pp.MixedDimensionalGrid, pp.FractureNetwork2d]:
     """Case 2 in 2d flow benchmark.
 
     Parameters:
         mesh_args (dict): Mesh arguments to be passed to PorePy.
 
     Returns:
-        pp.GridBucket: Mixed-dimensional grid of the domain.
+        pp.MixedDimensionalGrid: Mixed-dimensional grid of the domain.
 
     """
     abs_path = Path(__file__)
@@ -31,7 +31,7 @@ def case2(
 
 def case3(
     mesh_args: Optional[Dict[str, float]] = None, only_network: Optional[bool] = False
-) -> Union[pp.GridBucket, pp.FractureNetwork2d]:
+) -> Union[pp.MixedDimensionalGrid, pp.FractureNetwork2d]:
     """Case 3 in 2d flow benchmark.
 
     Parameters:
@@ -40,7 +40,7 @@ def case3(
             1500 2d cells, will be returned.
 
     Returns:
-        pp.GridBucket: Mixed-dimensional grid of the domain.
+        pp.MixedDimensionalGrid: Mixed-dimensional grid of the domain.
 
     """
     abs_path = Path(__file__)
@@ -56,7 +56,7 @@ def case3(
 
 def case4(
     mesh_args: Optional[Dict[str, float]] = None, only_network: Optional[bool] = False
-) -> Union[pp.GridBucket, pp.FractureNetwork2d]:
+) -> Union[pp.MixedDimensionalGrid, pp.FractureNetwork2d]:
     """Case 4 in 2d flow benchmark.
 
     Parameters:
@@ -65,7 +65,7 @@ def case4(
             11500 2d cells, will be returned.
 
     Returns:
-        pp.GridBucket: Mixed-dimensional grid of the domain.
+        pp.MixedDimensionalGrid: Mixed-dimensional grid of the domain.
 
     """
     abs_path = Path(__file__)

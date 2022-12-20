@@ -11,7 +11,7 @@ import porepy as pp
 
 def case1(
     refinement: Optional[Literal[0, 1, 2]] = None, only_network: Optional[bool] = False
-) -> Union[pp.GridBucket, pp.FractureNetwork3d]:
+) -> Union[pp.MixedDimensionalGrid, pp.FractureNetwork3d]:
     """Case 2 in 3d flow benchmark.
 
     Parameters:
@@ -20,7 +20,7 @@ def case1(
             3d cells, respectively.
 
     Returns:
-        pp.GridBucket: Mixed-dimensional grid of the domain.
+        pp.MixedDimensionalGrid: Mixed-dimensional grid of the domain.
 
     """
     abs_path = Path(__file__)
@@ -45,7 +45,7 @@ def case1(
 
 def case2(
     refinement: Optional[Literal[0, 1, 2]] = None, only_network: Optional[bool] = False
-) -> Union[pp.GridBucket, pp.FractureNetwork3d]:
+) -> Union[pp.MixedDimensionalGrid, pp.FractureNetwork3d]:
     """Case 2 in 3d flow benchmark.
 
     Parameters:
@@ -54,7 +54,7 @@ def case2(
             3d cells, respectively.
 
     Returns:
-        pp.GridBucket: Mixed-dimensional grid of the domain.
+        pp.MixedDimensionalGrid: Mixed-dimensional grid of the domain.
 
     """
     abs_path = Path(__file__)
@@ -80,7 +80,7 @@ def case2(
 def case3(
     refinement: Optional[Literal[0, 1, 2, 3]] = None,
     only_network: Optional[bool] = False,
-) -> Union[pp.GridBucket, pp.FractureNetwork3d]:
+) -> Union[pp.MixedDimensionalGrid, pp.FractureNetwork3d]:
     """Case 3 in 3d flow benchmark.
 
     Parameters:
@@ -91,7 +91,7 @@ def case3(
             version).
 
     Returns:
-        pp.GridBucket: Mixed-dimensional grid of the domain.
+        pp.MixedDimensionalGrid: Mixed-dimensional grid of the domain.
 
     """
     abs_path = Path(__file__)
@@ -118,14 +118,14 @@ def case3(
 
 def case4(
     only_network: Optional[bool] = False,
-) -> Union[pp.GridBucket, pp.FractureNetwork3d]:
+) -> Union[pp.MixedDimensionalGrid, pp.FractureNetwork3d]:
     """Case 4 in 3d flow benchmark.
 
     For now, mesh size cannot be adjusted, only the grid as specified in the
     benchmark (modulu changes to gmsh) is available
 
     Returns:
-        pp.GridBucket: Mixed-dimensional grid of the domain
+        pp.MixedDimensionalGrid: Mixed-dimensional grid of the domain
 
     """
     abs_path = Path(__file__)

@@ -8,7 +8,7 @@ from porepy_mesh_factory.flow_benchmark_2d import _flow_2d
 __all__ = ["generate"]
 
 
-def generate(case: str, **kwargs) -> pp.GridBucket:
+def generate(case: str, **kwargs) -> pp.MixedDimensionalGrid:
     """Main function for generating meshes of fracture networks and
     return a PorePy mixed-dimensional mesh.
 
