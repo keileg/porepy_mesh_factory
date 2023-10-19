@@ -3,10 +3,11 @@
 from pathlib import Path
 from typing import Optional, Dict, Union
 import porepy as pp
+from porepy.fracs.fracture_network_2d import FractureNetwork2d
 
 def case2(
     mesh_args: Optional[Dict[str, float]] = None, only_network: Optional[bool] = False
-) -> Union[pp.MixedDimensionalGrid, pp.FractureNetwork2d]:
+) -> Union[pp.MixedDimensionalGrid, FractureNetwork2d]:
     """Case 2 in 2d flow benchmark.
 
     Parameters:
@@ -31,7 +32,7 @@ def case2(
 
 def case3(
     mesh_args: Optional[Dict[str, float]] = None, only_network: Optional[bool] = False
-) -> Union[pp.MixedDimensionalGrid, pp.FractureNetwork2d]:
+) -> Union[pp.MixedDimensionalGrid, FractureNetwork2d]:
     """Case 3 in 2d flow benchmark.
 
     Parameters:
@@ -56,7 +57,7 @@ def case3(
 
 def case4(
     mesh_args: Optional[Dict[str, float]] = None, only_network: Optional[bool] = False
-) -> Union[pp.MixedDimensionalGrid, pp.FractureNetwork2d]:
+) -> Union[pp.MixedDimensionalGrid, FractureNetwork2d]:
     """Case 4 in 2d flow benchmark.
 
     Parameters:

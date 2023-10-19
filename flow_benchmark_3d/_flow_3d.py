@@ -7,11 +7,11 @@ else:
     from typing import Literal, Union, Optional
 
 import porepy as pp
-
+from porepy.fracs.fracture_network_3d import FractureNetwork3d
 
 def case1(
     refinement: Optional[Literal[0, 1, 2]] = None, only_network: Optional[bool] = False
-) -> Union[pp.MixedDimensionalGrid, pp.FractureNetwork3d]:
+) -> Union[pp.MixedDimensionalGrid, FractureNetwork3d]:
     """Case 2 in 3d flow benchmark.
 
     Parameters:
@@ -45,7 +45,7 @@ def case1(
 
 def case2(
     refinement: Optional[Literal[0, 1, 2]] = None, only_network: Optional[bool] = False
-) -> Union[pp.MixedDimensionalGrid, pp.FractureNetwork3d]:
+) -> Union[pp.MixedDimensionalGrid, FractureNetwork3d]:
     """Case 2 in 3d flow benchmark.
 
     Parameters:
@@ -80,7 +80,7 @@ def case2(
 def case3(
     refinement: Optional[Literal[0, 1, 2, 3]] = None,
     only_network: Optional[bool] = False,
-) -> Union[pp.MixedDimensionalGrid, pp.FractureNetwork3d]:
+) -> Union[pp.MixedDimensionalGrid, FractureNetwork3d]:
     """Case 3 in 3d flow benchmark.
 
     Parameters:
@@ -118,7 +118,7 @@ def case3(
 
 def case4(
     only_network: Optional[bool] = False,
-) -> Union[pp.MixedDimensionalGrid, pp.FractureNetwork3d]:
+) -> Union[pp.MixedDimensionalGrid, FractureNetwork3d]:
     """Case 4 in 3d flow benchmark.
 
     For now, mesh size cannot be adjusted, only the grid as specified in the
